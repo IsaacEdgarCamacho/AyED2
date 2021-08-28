@@ -1,0 +1,25 @@
+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
+
+Ejercicio 1 (Repaso de funciones sobre secuencias)
+						Extienda el tipo Secuencia(α) definiendo las siguientes operaciones:
+
+a) Duplicar , que dada una secuencia la devuelve duplicada elemento a elemento.
+	
+	Duplicar : secu(α) ⇒ secu(α)
+	Duplicar?(s) ≡ if vacía?(s) then <>
+															else
+																prim(s) • prim(s) • Duplicar(fin(s))
+															fi
+
+b) • ≤ •, que chequea si una secuencia es “menor o igual” a otra según 
+	el orden lexicográfico para una relación de orden total sobre α dada.
+
+	
+
+c)Reverso, que dada una secuencia devuelve su reverso 
+	(la secuencia dada vuelta).
+	
+	Reverso : secu(α) ⇒ secu(α)
+	Reverso(<>) 		≡ <> 
+	Reverso(x • s) 	≡ Reverso(s) ◦ x
+	
