@@ -5,12 +5,35 @@ using namespace std;
 
 // Ejercicio 1
 vector<int> quitar_repetidos(vector<int> s) {
-    return vector<int>();
+    vector<int>res;
+
+    for(int i: s){
+
+        int j = 0;
+        while(j<res.size() and i != res[j])
+            j++;
+
+        if(j == res.size())
+            res.push_back(i);
+    }
+
+    return res;
 }
 
 // Ejercicio 2
 vector<int> quitar_repetidos_v2(vector<int> s) {
-    return vector<int>();
+
+    vector<int>res;
+    set<int> c;
+
+    for(int i:s){
+        c.insert(i);
+    }
+
+    for(int j:c)
+        res.push_back(j);
+
+    return res;
 }
 
 // Ejercicio 3
