@@ -121,15 +121,59 @@ map<int, set<int>> agrupar_por_unidades(vector<int> s) {
 
 // Ejercicio 9
 vector<char> traducir(vector<pair<char, char>> tr, vector<char> str) {
-    return vector<char>();
+
+    vector<char>res = str;
+    map<char,char>dicc;
+    for(pair<char, char> p : tr){
+        dicc[p.first] = p.second;
+    }
+
+    for(int i=0; i < str.size(); i++){
+        if(dicc.count(str[i]) > 0)
+            res[i] = dicc[str[i]];
+
+    }
+    return res;
 }
 
 // Ejercicio 10
 bool integrantes_repetidos(vector<Mail> s) {
-    return true;
+
+    set<LU> lib, curso;
+    map< LU, set<LU> > grupos;
+    bool repetidos = false;
+
+    for(Mail m:s){
+
+        lib = m.libretas();
+        
+        for(LU l:lib){
+            grupos[l] = lib;
+        }
+    }
+
+    for(Mail m:s){
+
+        lib = m.libretas();
+        
+        for(LU l:lib){
+            if( lib != grupos[l])
+                repetidos |= true;
+
+        }
+    }
+
+    return repetidos;
 }
 
 // Ejercicio 11
 map<set<LU>, Mail> entregas_finales(vector<Mail> s) {
-  return map<set<LU>, Mail>();
+
+    map<set<LU>, Mail>res;
+
+    for(Mail m:s){
+        if(m.adjunto())
+            res[ m.libretas()] = m;
+    }
+    return res;
 }
