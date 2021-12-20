@@ -70,22 +70,53 @@ bool mismos_elementos_v2(vector<int> a, vector<int> b) {
 
 // Ejercicio 5
 map<int, int> contar_apariciones(vector<int> s) {
-    return map<int, int>();
+    map<int, int>res;
+
+    for(int i:s)
+        res[i]++;
+
+    return res;
 }
 
 // Ejercicio 6
 vector<int> filtrar_repetidos(vector<int> s) {
-    return vector<int>();
+    map<int,int> m = contar_apariciones(s);
+    vector<int>res;
+
+    map<int,int>::iterator it = m.begin();
+    while(it  != m.end()){
+        if(it->second == 1)
+            res.push_back(it->first);
+
+        it++;
+    }
+    
+    return res;
 }
 
 // Ejercicio 7
 set<int> interseccion(set<int> a, set<int> b) {
-    return set<int>();
+
+    set<int> intersecc;
+
+    for(int i:a){
+        if(b.count(i) > 0)
+            intersecc.insert(i);
+    }
+    return intersecc;
 }
 
 // Ejercicio 8
 map<int, set<int>> agrupar_por_unidades(vector<int> s) {
-    return map<int, set<int>>();
+
+    map<int, set<int>>res;
+
+
+    for(int i:s){
+
+        res[ i%10 ].insert( i );
+    }
+    return res;
 }
 
 // Ejercicio 9
