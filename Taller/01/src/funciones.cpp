@@ -38,12 +38,34 @@ vector<int> quitar_repetidos_v2(vector<int> s) {
 
 // Ejercicio 3
 bool mismos_elementos(vector<int> a, vector<int> b) {
-    return true;
+
+    bool res = true;
+    for (int i = 0; i < a.size(); ++i){
+        
+        int j = 0;
+        while(j < b.size() and  a[i] != b[j]){
+            j++;
+        }
+        if(j == b.size())
+            res = false;
+    }
+    return res;
 }
 
 // Ejercicio 4
 bool mismos_elementos_v2(vector<int> a, vector<int> b) {
-    return true;
+
+    set<int> x,y;
+
+    for(int i:a)
+        x.insert(i);
+
+    for(int j:b)
+        y.insert(j);
+
+
+
+    return x == y;
 }
 
 // Ejercicio 5
