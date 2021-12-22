@@ -25,16 +25,38 @@ class Fecha {
     bool operator==(Fecha o);
     #endif
 
+
+    Fecha(int mes, int dia);
+    int mes();
+    int dia();
   private:
-    //Completar miembros internos
+    int _dia;
+    int _mes;
 };
 
+ostream& operator<<(ostream& os, Fecha r) {
+
+    os << r.dia() << "/" << r.mes();
+    return os;
+}
+
+Fecha::Fecha(int mes, int dia):_dia(dia),_mes(mes){
+
+}
+
+int Fecha::mes(){
+  return _mes;
+}
+
+int Fecha::dia(){
+
+  return _dia;
+}
 
 #if EJ >= 9
 bool Fecha::operator==(Fecha o) {
-    bool igual_dia = this->dia() == o.dia();
-    // Completar iguadad (ej 9)
-    return igual_dia;
+    
+    return this->dia() == o.dia() and  this->mes() == o.mes();
 }
 #endif
 

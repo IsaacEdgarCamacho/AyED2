@@ -133,3 +133,4 @@ ostream& operator<<(ostream& os, Circulo r) {
     os << "Circ(" << r.radio() << ")";
     return os;
 }
+
