@@ -84,7 +84,7 @@ uint Cuadrado::lado() {
 }
 
 float Cuadrado::area() {
-    r_.area();
+    return r_.area();
 }
 
 // Ejercicio 4
@@ -124,3 +124,12 @@ ostream& operator<<(ostream& os, Elipse r) {
 }
 // Ejercicio 6
 
+ostream& operator<<(ostream& os, Cuadrado r) {
+    os << "Cuad(" << r.lado()<< ")";
+    return os;
+}
+
+ostream& operator<<(ostream& os, Circulo r) {
+    os << "Circ(" << r.radio() << ")";
+    return os;
+}
