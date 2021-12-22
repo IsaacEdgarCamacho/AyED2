@@ -12,6 +12,7 @@ class Rectangulo {
         uint alto();
         uint ancho();
         float area();
+        //ostream& operator<<(ostream& os, Rectangulo r);
 
     private:
         int alto_;
@@ -79,26 +80,47 @@ class Cuadrado {
 Cuadrado::Cuadrado(uint lado): r_(lado, lado) {}
 
 uint Cuadrado::lado() {
-    // Completar
+    return r_.alto();
 }
 
 float Cuadrado::area() {
-    // Completar
+    r_.area();
 }
 
 // Ejercicio 4
 
 // Clase Circulo
+class Circulo{
+    public:
+        Circulo(uint radio);
+        uint radio();
+        float area();
+    private:
+        Elipse e;
 
+};
+
+Circulo::Circulo(uint radio):e(radio,radio){}
+
+uint Circulo::radio(){
+    return e.r_a();
+}
+
+float Circulo::area(){
+    return e.area();
+}
 
 // Ejercicio 5
 
 ostream& operator<<(ostream& os, Rectangulo r) {
-    os << "Rect(" << r.ancho() << ", " << r.alto() << ")";
+    os << "Rect(" << r.alto() << ", " << r.ancho() << ")";
     return os;
 }
 
 // ostream Elipse
-
+ostream& operator<<(ostream& os, Elipse r) {
+    os << "Elipse(" << r.r_a() << ", " << r.r_b() << ")";
+    return os;
+}
 // Ejercicio 6
 
