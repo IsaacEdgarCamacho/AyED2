@@ -1,4 +1,4 @@
-Ejercitación: uso de clases
+#Ejercitación: uso de clases
 La ejercitación consiste en completar las funciones especificadas. Todos los ejer-
 cicios pueden resolverse editando el archivo src/funciones.cpp. A continuación se
 presentan las especificaciones de las funciones. Los primeros ejercicios pueden
